@@ -1,0 +1,111 @@
+---
+title: "Your first linear regression"
+author: "Bioinformatics Learning Workspace"
+date: "1/15/2022"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+\newpage
+
+# Calculating linear regression (so easy you can do it by hand)
+
+## Formula for calculating the best slope for a set of points.
+
+$$m=\frac{\overline{xy}-(\overline{x})(\overline{y})}{\overline{x^{2}}-(\overline{x})^{2}}$$
+
+## Formula for calculating the y-intercept for a set of points
+
+$$b=\overline{y} - m\overline{x}$$
+
+## Example 
+
+```{r regression_data, echo=FALSE}
+
+x <- c(1,2,3,5)
+y <- c(2,3,4,5)
+
+my_df <- data.frame(x=x,y=y) 
+knitr::kable(my_df)
+
+
+plot(x,y)
+```
+
+So, for 
+$$m=\frac{\overline{xy}-(\overline{x})(\overline{y})}{\overline{x^{2}}-(\overline{x})^{2}}$$
+
+```{r calculate_sums_and_means, echo=FALSE}
+
+augmented_df <- data.frame(x=x,y=y,xy=x*y,x_sq=x^2) 
+knitr::kable(augmented_df, col.names=c("x","y","xy","$x^{2}$"))
+
+sum_row <- as.data.frame(lapply(augmented_df,sum))
+knitr::kable(sum_row, col.names = c("$\\sum{x}$","$\\sum{y}$","$\\sum{xy}$","$\\sum{x^{2}}$"))
+
+mean_row <- as.data.frame(lapply(augmented_df,mean))
+knitr::kable(mean_row, col.names = c("$\\overline{x}$","$\\overline{y}$","$\\overline{xy}$","$\\overline{x^{2}}$"))
+
+m_numerator <- mean_row$xy - (mean_row$x * mean_row$y)
+m_denominator <- mean_row$x_sq - mean_row$x^2
+m <- m_numerator/m_denominator
+
+b <- mean_row$y - (m * mean_row$x)
+```
+
+m = (`r mean_row$xy` - (`r mean_row$x`)(`r mean_row$y`))/(`r mean_row$x_sq` - (`r mean_row$x`)^2)  
+m = (`r mean_row$xy` -  &nbsp;&nbsp;  `r mean_row$x * mean_row$y` &nbsp; )/(`r mean_row$x_sq` - `r mean_row$x ^ 2`)  
+m = `r m_numerator`/`r m_denominator`  
+
+m = `r m`
+
+And for
+
+$$b=\overline{y} - m\overline{x}$$
+
+b = `r mean_row$y` - `r m` (`r mean_row$x`)  
+b = `r b`
+
+Thus giving the line y = `r m`x + `r b`, which we'll plot over the points.
+
+\newpage
+
+Remember that our "manually calculated" regression formula is 
+
+y = `r m`x + `r b`
+
+(m = `r m`, b = `r b`)  
+
+
+```{r plot_with_line}
+
+# plot the points
+plot(x,y)
+
+# capture the lowest and highest x values so that our regression line will span all values have the same length
+ideal_x <- c(min(x),max(x))
+
+# calculate 
+ideal_y <- lapply(ideal_x, function(x) {m*x + b}) # lapply "applies" our formula to get the model's y coordinates
+
+# Draw the regression line
+lines(ideal_x,ideal_y)
+```
+
+Or if you want to take all the fun out of it and just use R functions to do the work:
+
+```{r using_r_functions}
+
+# Linear regression model for our points
+my_model <- lm(y ~ x)
+
+# Plot the points
+plot(x,y)
+
+# Plot the regression line for our model
+lines(x,predict(my_model))
+```
+
