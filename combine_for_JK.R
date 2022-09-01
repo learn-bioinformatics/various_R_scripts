@@ -1,8 +1,8 @@
 #!/bin/env Rscript
-# SBATCH --cpus-per-task 4
-# SBATCH --mem-per-cpu 4G
-# SBATCH --time 1-00:00
-# SBATCH --mail-type END,FAIL
+#SBATCH --cpus-per-task 4
+#SBATCH --mem-per-cpu 4G
+#SBATCH --time 1-00:00
+#SBATCH --mail-type END,FAIL
 
 id_column <- "ID"
 target_column <- "val"
@@ -25,8 +25,8 @@ combined <- dfs[[first_sample_name]][id_column]
 for (sample_name in sample_names) {
   # Capture target column from each sample and assign it the sample name
   combined[[sample_name]] <- unlist(dfs[[sample_name]][target_column])
-  # Unlisting prevents name of extracted column
-  # from overwriting sample name.
+  #                          Unlisting prevents name of extracted column
+  #                            from overwriting sample name.
 }
 
 print(combined)
