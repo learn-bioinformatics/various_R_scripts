@@ -3,7 +3,7 @@ library(tidyverse)
 library(ggplot2)
 library(scales)
 
-my_data <- read.table("my_data.csv", header = TRUE)
+my_data <- read.table("data_for_pca.csv", header = TRUE)
 my_data <- column_to_rownames(my_data, "GeneID")
 
 # Replace NAs with zero (may or may not be appropriate, depending on your data)
