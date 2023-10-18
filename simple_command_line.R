@@ -1,8 +1,6 @@
 #!/bin/env Rscript
-#SBATCH --cpus-per-task 12
-#SBATCH --mem-per-cpu 8G
-#SBATCH --time 1-00:00
-#SBATCH --mail-user $USER@omrf.org
+#SBATCH --cpus-per-task 2
+#SBATCH --mem-per-cpu 4G
 #SBATCH --mail-type END,FAIL
 
 # You can have as many positional arguments as you want
@@ -27,3 +25,7 @@ my_var_3 <- args[3] # Third positional argument
 if (is.na(my_var_1)) my_var_1 <- "default_1"
 if (is.na(my_var_2)) my_var_2 <- "default_2"
 if (is.na(my_var_3)) my_var_3 <- "default_3"
+
+print(paste0("1st command line argument is ", my_var_1))
+print(paste0("2nd command line argument is ", my_var_2))
+print(paste0("3rd command line argument is ", my_var_3))
