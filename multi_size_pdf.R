@@ -8,7 +8,7 @@
 
 #Load needed libraries
 library(qpdf)
-library(ggplot2)
+library(ggplot2) # consuming script should have ggplot2 available
 
 multi_size_pdf <- function(plots_h_w, outfile="combined.pdf") {
     pdf_filenames <- c()
@@ -29,6 +29,7 @@ multi_size_pdf <- function(plots_h_w, outfile="combined.pdf") {
             height = plots_h_w[[name]][[2]]
         }
 
+        # Create temporary PDF file
         pdf(pdf_filename,
             height = height,
             width = width
