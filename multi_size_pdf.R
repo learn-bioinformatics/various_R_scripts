@@ -38,6 +38,7 @@ multi_size_pdf <- function(plots_h_w, outfile="combined.pdf") {
         pdf_filenames <- c(pdf_filenames, pdf_filename)
     }
 
-    pdf_filenames
     pdf_combine(pdf_filenames, outfile)
+    file.remove(pdf_filenames)
+    message(paste0("Output file ", outfile))
 }
