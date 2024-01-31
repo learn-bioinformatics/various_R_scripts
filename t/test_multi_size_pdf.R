@@ -2,7 +2,7 @@
 #SBATCH --cpus-per-task 4
 #SBATCH --mem-per-cpu 4G
 
-source("multi_size_pdf.R")
+source("../multi_size_pdf.R")
 
 plot_list <- list()
 
