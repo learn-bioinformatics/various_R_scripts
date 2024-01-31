@@ -11,3 +11,6 @@ command_line.R: script demonstrating reading and using arguments from the comman
 pca.R: Demonstrates a simple PCA plot
 
 multi_size_pdf.R: Create PDF files off ggplots that can have different dimensions on each page.
+
+gridarrange.R: Arrange plots in a grid, with specific placement and sizing.
+               See the excellent comments in the code for how to use it.
