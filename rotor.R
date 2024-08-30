@@ -43,7 +43,8 @@ test_rotor <- function() {
   print(sapply(names(with_partial), function(x) {mean(with_partial[[x]])} ))
 }
 
-if (length(sys.frames()) == 0) {
-    print("Running directly from the command-line, so running test")
-    test_rotor()
+# modulino
+if (length(sys.frames()) == 0) { # if true, this script has been run itself
+  print("Running directly from the command-line, so running test")
+  test_rotor()
 }
