@@ -31,7 +31,7 @@ test_rotor <- function() {
   print("rotor without partial:")
   print(my_lists)
   print("Means of rotored list:")
-  means <- sapply(names(my_lists), function(x) {mean(my_lists[[x]])} )
+  means <- sapply(names(my_lists), function(x) mean(my_lists[[x]]))
   print(means)
 
   with_partial <- rotor(nums, 10, partial = TRUE)
@@ -40,7 +40,7 @@ test_rotor <- function() {
   print(with_partial)
 
   print("means of rotored list with partial:")
-  print(sapply(names(with_partial), function(x) {mean(with_partial[[x]])} ))
+  print(sapply(names(with_partial), function(x) mean(with_partial[[x]])))
 }
 
 # modulino
