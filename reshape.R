@@ -1,6 +1,7 @@
-library(dplyr)
-library(reshape2)
-library(tidyr)
+#!/bin/env Rscript
+library(dplyr)    # provide %>% pipe
+library(reshape2) # provide dcast function
+library(tidyr)    # provide pivot_wider function
 
 # Add a dummy location column to the example data set "iris"
 location <- c(rep(rep(letters[1:5], each = 10), 3))
