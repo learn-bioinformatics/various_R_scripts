@@ -11,4 +11,5 @@ should not be considered a definitive resource.
 | multi_size_pdf.R | Create PDF files off ggplots that can have different dimensions on each page |
 | pca.R            | Demonstrates a simple PCA plot  |
 | reshape.R        | Reshape dataframe using reshape2's dcast and tidyr's pivot_wider |
-| rotor.R          | Chop up vectors into a list of vectors, each of the same size (with optional partial list). Inspired by Raku's rotor function.|
+| rotor.R          | Chop up vectors into a list of vectors, each of the same size (with optional partial list). Inspired by Raku's rotor function. (also modulino example)|
+| separate_delim.R | Split delimited column values into separate columns |

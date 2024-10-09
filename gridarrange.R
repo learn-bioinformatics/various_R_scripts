@@ -1,3 +1,4 @@
+#!/bin/env Rscript
 ## Load packages
 
 library(ggplot2)

@@ -1,3 +1,4 @@
+#!/bin/env Rscript
 library(Seurat)
 obj <- readRDS("unintegrated_filtered.rds")
 

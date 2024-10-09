@@ -1,3 +1,4 @@
+#!/bin/env Rscript
 library(tidyr)
 df <- data.frame(
         vdj_region = c("AAAA",
