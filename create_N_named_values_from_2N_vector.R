@@ -1,14 +1,18 @@
 #!/bin/env -S Rscript --vanilla
-#SBATCH --cpus-per-task 4
-#SBATCH --mem-per-cpu 4G
 
-vec <- c("Name", "George", "Height", "35", "Weight", "180")
+# capture the command line arguments
+args <- commandArgs(trailingOnly=TRUE)
+
 # Extract names (odd indices) and values (even indices)
-names <- vec[seq(1, length(vec), by = 2)]
-values <- vec[seq(2, length(vec), by = 2)]
+names <- args[seq(1, length(args), by = 2)]
+values <- args[seq(2, length(args), by = 2)]
 
+unique_names <- unique(names)
 
-converted <- lapply(values, function(x) {ifelse(grepl("^-?\\d+(\\.\\d+)?$", x), as.numeric(x), x) })
-named_list <- setNames(as.list(converted), names)
+if (length(unique_names) != length(values) ) {
+  stop("ERROR: Either odd number of arguments or names are not unique")
+}
+
+named_list <- setNames(as.list(values), names)
 
 print(named_list)
