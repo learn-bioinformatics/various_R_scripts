@@ -53,8 +53,6 @@ in R is that each time you print, you get a new page. So if you want to generate
 +--------------+---------------------------------------------------------------+
 
 
-"
-
 ```{r}
 # Don't use X11 for PNG files (especially useful in an HPC environment)
 options(bitmapType='cairo')
@@ -125,7 +123,7 @@ plot_grid(p1, p2, labels = "auto")
 
 # Close the SVG file
 dev.off()
-```{r}
+```
 
 see more examples at https://wilkelab.org/cowplot/articles/plot_grid.html
 

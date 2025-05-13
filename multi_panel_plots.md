@@ -157,17 +157,8 @@ dev.off()
 ##   2
 ```
 
-``` r
 see more examples at https://wilkelab.org/cowplot/articles/plot_grid.html
 
 See for example, how they use these options:
 * ncol       # number of columns (i.e., plots per row)
 * rel_widths # adjust the relative widths of the columns
-```
-
-```
-## Error in parse(text = input): <text>:2:5: unexpected symbol
-## 1: 
-## 2: see more
-##        ^
-```
