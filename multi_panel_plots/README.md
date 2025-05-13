@@ -18,8 +18,7 @@ color.
 
 |                      |PNG         | SVG                | PDF                |
 |----------------------|------------|--------------------|--------------------|
-|File size scales with |# of pixels |# of elements (dots,|# of elements (dots,|
-|                      |            |lines, shapes)      |lines, shapes)      |
+|File size scales with |# of pixels |# of elements (dots, lines, shapes) |# of elements (dots, lines, shapes) |
 |File type             | binary     | text               | mix of binary/text |
 |Resolution            | Fixed      | Unlimited_*_       | Unlimited_*_       |
 
