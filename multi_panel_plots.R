@@ -2,7 +2,7 @@
 #SBATCH --cpus-per-task 4
 #SBATCH --mem-per-cpu 4G
 
-# Don't use X11 for PNG files
+# Don't use X11 for PNG files (especially useful in an HPC environment)
 options(bitmapType='cairo')
 
 #Load needed libraries
@@ -46,7 +46,7 @@ dev.off()
 png("two_plots_100by50_pixels.png", width=100, height=50)
 
 # Print to it 
-plot_grid(p1, p2, labels = "auto")
+plot_grid(p1, p2, labels = "auto") # auto in lowercase uses a, b, c, ...
 
 # Close the SVG file
 dev.off()
