@@ -1,4 +1,3 @@
-#!/bin/env -S Rscript --vanilla
 ---
 output: rmarkdown::github_document
 ---
