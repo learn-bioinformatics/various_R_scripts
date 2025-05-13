@@ -1,8 +1,3 @@
-#!/bin/env -S Rscript --vanilla
----
-output: rmarkdown::github_document
----
-
 With R, when you print plots to PDF or SVG files, they are created as [vector
 graphics](https://en.wikipedia.org/wiki/Vector_graphics), which don't have a
 given resolution . In other words, you can 'zoom in' forever and it won't get
@@ -22,14 +17,11 @@ color.
 
 
 |                      |PNG         | SVG                | PDF                |
-+----------------------+------------+--------------------+--------------------+
-|File size scales with |# of pixels |# of elements (dots,|# of elements (dots,| 
-|                      |            |lines, shapes)      |lines, shapes)      | 
-+----------------------+------------+--------------------+--------------------+ 
-|File type             | binary     | text               | mix of binary/text | 
-+----------------------+------------+--------------------+--------------------+ 
-|Resolution            | Fixed      | Unlimited*         | Unlimited*         | 
-+----------------------+------------+--------------------+--------------------+ 
+|----------------------|------------|--------------------|--------------------|
+|File size scales with |# of pixels |# of elements (dots,|# of elements (dots,|
+|                      |            |lines, shapes)      |lines, shapes)      |
+|File type             | binary     | text               | mix of binary/text |
+|Resolution            | Fixed      | Unlimited_*_       | Unlimited_*_       |
 
 *You CAN embed PNGs or other pixel-based images within PDFs or SVGs, but then
 you lose the advantage of not having to worry about resolution.

@@ -17,14 +17,11 @@ color.
 
 
 |                      |PNG         | SVG                | PDF                |
-+----------------------+------------+--------------------+--------------------+
-|File size scales with |# of pixels |# of elements (dots,|# of elements (dots,| 
-|                      |            |lines, shapes)      |lines, shapes)      | 
-+----------------------+------------+--------------------+--------------------+ 
-|File type             | binary     | text               | mix of binary/text | 
-+----------------------+------------+--------------------+--------------------+ 
-|Resolution            | Fixed      | Unlimited*         | Unlimited*         | 
-+----------------------+------------+--------------------+--------------------+ 
+|----------------------|------------|--------------------|--------------------|
+|File size scales with |# of pixels |# of elements (dots,|# of elements (dots,|
+|                      |            |lines, shapes)      |lines, shapes)      |
+|File type             | binary     | text               | mix of binary/text |
+|Resolution            | Fixed      | Unlimited_*_       | Unlimited_*_       |
 
 *You CAN embed PNGs or other pixel-based images within PDFs or SVGs, but then
 you lose the advantage of not having to worry about resolution.
