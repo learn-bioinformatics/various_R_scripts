@@ -1,6 +1,6 @@
 #!/bin/env -S Rscript --vanilla
 ---
-output: html_document
+output: rmarkdown::github_document
 ---
 
 With R, when you print plots to PDF or SVG files, they are created as [vector
