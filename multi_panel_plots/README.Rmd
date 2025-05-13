@@ -20,7 +20,7 @@ color.
 |----------------------|------------|--------------------|--------------------|
 |File size scales with |# of pixels |# of elements (dots, lines, shapes) |# of elements (dots, lines, shapes) |
 |File type             | binary     | text               | mix of binary/text |
-|Resolution            | Fixed      | Unlimited_*_       | Unlimited_*_       |
+|Resolution            | Fixed      | Unlimited\*        | Unlimited\*        |
 
 *You CAN embed PNGs or other pixel-based images within PDFs or SVGs, but then
 you lose the advantage of not having to worry about resolution.
