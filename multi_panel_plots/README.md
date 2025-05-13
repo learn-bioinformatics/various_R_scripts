@@ -1,7 +1,3 @@
----
-output: rmarkdown::github_document
----
-
 With R, when you print plots to PDF or SVG files, they are created as [vector
 graphics](https://en.wikipedia.org/wiki/Vector_graphics), which don't have a
 given resolution . In other words, you can 'zoom in' forever and it won't get
