@@ -10,12 +10,12 @@ library(ggplot2)
 pdf("socviz_demo.pdf")
 
 # Create plots that we'll later put into a grid
-plotA <- qplot(x=wt,y=mpg,geom="point",main="Scatterplot of wt vs mpg", data=mtcars)
-plotB <- qplot(x=wt,y=disp,geom="point",main="Scatterplot of wt vs disp", data=mtcars)
-plotC <- qplot(wt,data=mtcars)
-plotD <- qplot(x=wt,y=disp,geom="point",main="Scatterplot P4", data=mtcars)
-plotE <- qplot(x=wt,y=disp,geom="point",main="Scatterplot P5", data=mtcars)
-plotF <- qplot(x=wt,y=disp,geom="point",main="Scatterplot P7", data=mtcars)
+plotA <- qplot(x=wt,y=mpg, geom="point",main="plotA", data=mtcars)
+plotB <- qplot(x=wt,y=disp,geom="point",main="plotB", data=mtcars)
+plotC <- qplot(wt,                      main="plotC", data=mtcars)
+plotD <- qplot(x=wt,y=disp,geom="point",main="plotD", data=mtcars)
+plotE <- qplot(x=wt,y=disp,geom="point",main="plotE", data=mtcars)
+plotF <- qplot(x=wt,y=disp,geom="point",main="plotF", data=mtcars)
 
 # Define the "rows" and "columns" that each plot fills up.
 # Here we are implementing a 5 row x 2 column grid
@@ -36,22 +36,24 @@ plotF <- qplot(x=wt,y=disp,geom="point",main="Scatterplot P7", data=mtcars)
 #     +---+---+
 
 
-#              row(s)  column(s)
-#                   |    |
-lay_out(     #      |    |
-             #      |    |   # Left column ( column = 1)
-        list(plotA, 1,   1), # Top row (top left square)
-        list(plotB, 2:4, 1), # Rows 2-4 (middle rectange 3 high)
-        list(plotC, 5,   1), # Row 5 (bottom left square)
+#          row(s)  column(s)
+#               |    |
+lay_out( #      |    |
+         #      |    |   # Left column ( column = 1)
+    list(plotA, 1,   1),  # Top row (top left square)
+    list(plotB, 2:4, 1),  # Rows 2-4 (middle rectange 3 high)
+    list(plotC, 5,   1),  # Row 5 (bottom left square)
 
-                          # Right column ( column = 2)
-        list(plotD, 1:2, 2), # Rows 1-2 (rectangle "2 high" at top right)
-        list(plotE, 3,   2), # Row 3 (single square in the middle, on the right)
-#        list(NULL,  4,   2), # Row 4 (empty spot just above bottom square)
-        list(plotF, 5,   2)  # Rows 5 (bottom right square)
+                         # Right column ( column = 2)
+    list(plotD, 1:2, 2),  # Rows 1-2 ("two square" tall rectangle at top right)
+    list(plotE, 3,   2),  # Row 3 (single square in the middle, on the right)
+    list(NULL,  4,   2),  # Row 4 (empty spot just above bottom square)
+    list(plotF, 5,   2)   # Rows 5 (bottom right square)
 )
 
-# Uncomment the line above for row 4, column 2 for the same result.
+# You can comment the line above for row 4, column 2 for the same result.
 # Specifying a NULL position is the same as not specifying it at all.
+# If you do want an empty position, I recommend specifying a NULL there so that
+# it is very obvious that you did that intentionally.
 
 dev.off()
